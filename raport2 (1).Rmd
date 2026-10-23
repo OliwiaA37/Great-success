@@ -764,25 +764,6 @@ Tibbles są zaprojektowane tak, abyś przypadkowo nie przytłoczył swojej konso
 
 Zadanie wykonaj w kilku etapach:
 
-Jesteś agentem nieruchomości. Klient oczekuje od ciebie zestawienia:
-- mieszkanie do 100 m2
-- 1 sypialnia
-- 1 łazienka
-- pokaz je wg typu
-- posortuj od najdrozszych pamietajac o tym zeby byly rowniez jak najwiekszej powierzchni
-
-```{r}
-dane %>%
- mutate(m2 = sq__ft*0.092903) %>%
-  filter(beds==1 & baths==1 & m2 <= 100) %>%
-  group_by(type) %>%
-  arrange(-price, -m2) %>%
-  select(street, city, m2, price) %>%
-  head(5)
-```
-
-
-
 1.  Zapisz "dane" jako obiekt tibble pod inną nazwą, np. dane2. Porównaj je.
 2.  Które ze zmiennych przekształcone powinny być w czynnik (factor)?
 3.  Cena nieruchomości (price) jest obecnie integer. Czy to odpowiednie?
