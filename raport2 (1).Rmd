@@ -762,6 +762,19 @@ Tibbles są zaprojektowane tak, abyś przypadkowo nie przytłoczył swojej konso
 
 ## Zadanie do wykonania
 
+
+```{r}
+dane %>%
+ mutate(m2 = sq__ft*0.092903) %>%
+  filter(beds==1 & baths==1 & m2 <= 100) %>%
+  group_by(type) %>%
+  arrange(-price, -m2) %>%
+  select(street, city, m2, price) %>%
+  head(5)
+```
+
+
+
 Zadanie wykonaj w kilku etapach:
 
 1.  Zapisz "dane" jako obiekt tibble pod inną nazwą, np. dane2. Porównaj je.
